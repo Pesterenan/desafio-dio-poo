@@ -2,29 +2,16 @@ package br.com.pesterenan.dio.desafio.dominio;
 
 import java.time.LocalDate;
 
-public class Mentoria {
+public class Mentoria extends Conteudo{
 
-	private String titulo;
-	private String descricao;
 	private LocalDate data;
 
+	@Override
+	public double calcularXP() {
+		return XP_PADRAO + 20d;
+	}
+
 	public Mentoria() {
-	}
-
-	public String getTitulo() {
-		return titulo;
-	}
-
-	public void setTitulo(String titulo) {
-		this.titulo = titulo;
-	}
-
-	public String getDescricao() {
-		return descricao;
-	}
-
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
 	}
 
 	public LocalDate getData() {
@@ -38,23 +25,23 @@ public class Mentoria {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Mentoria [");
-		if (titulo != null) {
+		builder.append("Mentoria \t|");
+		if (getTitulo() != null) {
 			builder.append("titulo=");
-			builder.append(titulo);
-			builder.append(", ");
+			builder.append(getTitulo());
+			builder.append("\n");
 		}
-		if (descricao != null) {
-			builder.append("descricao=");
-			builder.append(descricao);
-			builder.append(", ");
+		if (getDescricao() != null) {
+			builder.append("\t|descricao=");
+			builder.append(getDescricao());
+			builder.append("\n");
 		}
 		if (data != null) {
-			builder.append("data=");
+			builder.append("\t|data=");
 			builder.append(data);
 		}
-		builder.append("]");
 		return builder.toString();
 	}
+
 
 }

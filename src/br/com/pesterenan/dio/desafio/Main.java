@@ -1,7 +1,10 @@
 package br.com.pesterenan.dio.desafio;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
+import br.com.pesterenan.dio.desafio.dominio.Conteudo;
 import br.com.pesterenan.dio.desafio.dominio.Curso;
 import br.com.pesterenan.dio.desafio.dominio.Mentoria;
 
@@ -25,9 +28,12 @@ public class Main {
 		mentoriaJava.setData(LocalDate.now());
 		
 		// Imprimir o método toString das instâncias
-		System.out.println(cursoJava);
-		System.out.println(cursoJavaScript);
-		System.out.println(mentoriaJava);
+
+		List<Conteudo> conteudos = new ArrayList<>();
+		conteudos.add(cursoJava);
+		conteudos.add(cursoJavaScript);
+		conteudos.add(mentoriaJava);
+		conteudos.stream().forEach(System.out::println);
 	}
 
 }

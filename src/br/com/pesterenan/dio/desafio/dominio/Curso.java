@@ -1,28 +1,10 @@
 package br.com.pesterenan.dio.desafio.dominio;
 
-public class Curso {
+public class Curso extends Conteudo {
 
-	private String titulo;
-	private String descricao;
 	private int cargaHoraria;
 
 	public Curso() {
-	}
-
-	public String getTitulo() {
-		return titulo;
-	}
-
-	public void setTitulo(String titulo) {
-		this.titulo = titulo;
-	}
-
-	public String getDescricao() {
-		return descricao;
-	}
-
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
 	}
 
 	public int getCargaHoraria() {
@@ -36,21 +18,26 @@ public class Curso {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Curso [");
-		if (titulo != null) {
+		builder.append("Curso \t|");
+		if (getTitulo() != null) {
 			builder.append("titulo=");
-			builder.append(titulo);
-			builder.append(", ");
+			builder.append(getTitulo());
+			builder.append("\n");
 		}
-		if (descricao != null) {
-			builder.append("descricao=");
-			builder.append(descricao);
-			builder.append(", ");
+		if (getDescricao() != null) {
+			builder.append("\t|descricao=");
+			builder.append(getDescricao());
+			builder.append("\n");
 		}
-		builder.append("cargaHoraria=");
+		builder.append("\t|cargaHoraria=");
 		builder.append(cargaHoraria);
-		builder.append("]");
+		builder.append("h");
 		return builder.toString();
+	}
+
+	@Override
+	public double calcularXP() {
+		return cargaHoraria * XP_PADRAO;
 	}
 
 }
