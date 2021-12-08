@@ -18,7 +18,7 @@ public class Curso extends Conteudo {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Curso \t|");
+		builder.append("\nCurso \t|");
 		if (getTitulo() != null) {
 			builder.append("titulo=");
 			builder.append(getTitulo());

@@ -4,8 +4,10 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.pesterenan.dio.desafio.dominio.Bootcamp;
 import br.com.pesterenan.dio.desafio.dominio.Conteudo;
 import br.com.pesterenan.dio.desafio.dominio.Curso;
+import br.com.pesterenan.dio.desafio.dominio.Dev;
 import br.com.pesterenan.dio.desafio.dominio.Mentoria;
 
 public class Main {
@@ -34,6 +36,30 @@ public class Main {
 		conteudos.add(cursoJavaScript);
 		conteudos.add(mentoriaJava);
 		conteudos.stream().forEach(System.out::println);
+		
+		Bootcamp bootcamp = new Bootcamp("Bootcamp Java Developer", "Bootcamp Estudos e Astração em Java");
+		bootcamp.getConteudos().add(cursoJava);
+		bootcamp.getConteudos().add(cursoJavaScript);
+		bootcamp.getConteudos().add(mentoriaJava);
+		
+		Dev devRenan = new Dev();
+		devRenan.setNome("Renan");
+		devRenan.inscreverBootcamp(bootcamp);
+		System.out.println("Conteúdos Inscritos: " + devRenan.getConteudosInscritos());
+		devRenan.progredir();
+		System.out.println("Conteúdos Concluídos: " + devRenan.getConteudosConcluidos());
+		System.out.println("xP: " + devRenan.calcularTotalXp());
+		
+		Dev devCamila = new Dev();
+		devCamila.setNome("Camila");
+		devCamila.inscreverBootcamp(bootcamp);
+		System.out.println("Conteúdos Inscritos: " + devCamila.getConteudosInscritos());
+		devCamila.progredir();
+		devCamila.progredir();
+		devCamila.progredir();
+		System.out.println("Conteúdos Concluídos: " + devCamila.getConteudosConcluidos());
+		System.out.println("xP: " + devCamila.calcularTotalXp());
+	
 	}
 
 }

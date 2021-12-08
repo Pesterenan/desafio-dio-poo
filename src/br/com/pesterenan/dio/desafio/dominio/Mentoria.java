@@ -25,7 +25,7 @@ public class Mentoria extends Conteudo{
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Mentoria \t|");
+		builder.append("\nMent.\t|");
 		if (getTitulo() != null) {
 			builder.append("titulo=");
 			builder.append(getTitulo());
